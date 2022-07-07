@@ -1,9 +1,11 @@
 Package: ussie
-Title: What the Package Does (One Line, Title Case)
+Title: Work with European Football League Data
 Version: 0.0.0.9000
 Authors@R: 
     person("Gilles", "Perry", , "gilles.perry@se.com", role = c("aut", "cre"))
-Description: What the package does (one paragraph).
+Description: This is a demo package for the "Building Tidy Tools" workshop at 
+    at rstudio::conf(2022L). It allows you to work with European football 
+    league data supplied by the engsoccerdata package (Curley 2016).
 License: MIT + file LICENSE
 Encoding: UTF-8
 Roxygen: list(markdown = TRUE)
@@ -11,5 +13,9 @@ RoxygenNote: 7.2.0
 URL: https://github.com/gilles-38/ussie
 BugReports: https://github.com/gilles-38/ussie/issues
 Suggests: 
+    engsoccerdata,
     testthat (>= 3.0.0)
 Config/testthat/edition: 3
+Imports: 
+    dplyr,
+    tibble
