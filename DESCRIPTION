@@ -14,8 +14,11 @@ URL: https://github.com/gilles-38/ussie
 BugReports: https://github.com/gilles-38/ussie/issues
 Suggests: 
     engsoccerdata,
+    knitr,
+    rmarkdown,
     testthat (>= 3.0.0)
 Config/testthat/edition: 3
 Imports: 
     dplyr,
     tibble
+VignetteBuilder: knitr
