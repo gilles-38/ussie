@@ -14,18 +14,22 @@
 #' uss_make_matches(engsoccerdata::spain, "Spain")
 
 uss_make_matches <- function(data_engsoc, country) {
+
+  validate_data_frame(data_engsoc)
+  validate_cols(data_engsoc, cols_engsoc())
+
   result <-
     data_engsoc |>
     tibble::as_tibble() |>
     dplyr::transmute(
       country = as.character(country),
-      tier = as.integer(tier),
-      season = as.integer(Season),
-      date = as.Date(Date),
-      home = as.character(home),
-      visitor = as.character(visitor),
-      goals_home = as.integer(hgoal),
-      goals_visitor = as.integer(vgoal)
+      tier = as.integer(.data$tier),
+      season = as.integer(.data$Season),
+      date = as.Date(.data$Date),
+      home = as.character(.data$home),
+      visitor = as.character(.data$visitor),
+      goals_home = as.integer(.data$hgoal),
+      goals_visitor = as.integer(.data$vgoal)
     )
   result
 }

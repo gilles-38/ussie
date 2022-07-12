@@ -32,7 +32,19 @@ glimpse(matches_italy)
 
 ```
 
+We can also create a matches tibble using a `country` :
 
+``` {r get_matches_italy}
+get_matches_italy <- uss_get_matches("italy")
 
+glimpse(get_matches_italy)
 
+```
 
+We can add filtering conditions
+
+``` {r matches_filter}
+
+uss_get_matches("italy", season == 1934) |> glimpse()
+
+```
