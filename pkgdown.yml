@@ -3,7 +3,7 @@ pkgdown: 2.0.5
 pkgdown_sha: ~
 articles:
   ussie: ussie.html
-last_built: 2022-07-12T13:02Z
+last_built: 2022-07-12T13:30Z
 urls:
   reference: https://gilles-38.github.io/ussie/reference
   article: https://gilles-38.github.io/ussie/articles
