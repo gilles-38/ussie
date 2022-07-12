@@ -153,6 +153,19 @@
 <span><span class="co">#&gt; $ points        <span style="color: #949494; font-style: italic;">&lt;int&gt;</span> 32, 36, 36, 33, 26, 48, 50, 45, 28, 30, 30, 33, 37, 39, …</span></span>
 <span><span class="co">#&gt; $ goals_for     <span style="color: #949494; font-style: italic;">&lt;int&gt;</span> 53, 73, 56, 45, 52, 63, 85, 56, 49, 48, 46, 52, 61, 52, …</span></span>
 <span><span class="co">#&gt; $ goals_against <span style="color: #949494; font-style: italic;">&lt;int&gt;</span> 48, 52, 46, 56, 78, 39, 38, 31, 50, 55, 64, 60, 51, 31, …</span></span></code></pre></div>
+<p>We can look at the effect of tiers on (wins - losses) :</p>
+<div class="sourceCode" id="cb6"><pre class="downlit sourceCode r">
+<code class="sourceCode R"><span></span>
+<span><span class="va">leeds_norwich</span> <span class="op">&lt;-</span></span>
+<span>  <span class="fu"><a href="../reference/uss_get_matches.html">uss_get_matches</a></span><span class="op">(</span><span class="st">"england"</span><span class="op">)</span> <span class="op">|&gt;</span></span>
+<span>  <span class="fu"><a href="../reference/uss_make_teams_matches.html">uss_make_teams_matches</a></span><span class="op">(</span><span class="op">)</span> <span class="op">|&gt;</span></span>
+<span>  <span class="fu">dplyr</span><span class="fu">::</span><span class="fu"><a href="https://dplyr.tidyverse.org/reference/filter.html" class="external-link">filter</a></span><span class="op">(</span><span class="va">team</span> <span class="op"><a href="https://rdrr.io/r/base/match.html" class="external-link">%in%</a></span> <span class="fu"><a href="https://rdrr.io/r/base/c.html" class="external-link">c</a></span><span class="op">(</span><span class="st">"Leeds United"</span>, <span class="st">"Norwich City"</span><span class="op">)</span><span class="op">)</span> <span class="op">|&gt;</span></span>
+<span>  <span class="fu">dplyr</span><span class="fu">::</span><span class="fu"><a href="https://dplyr.tidyverse.org/reference/mutate.html" class="external-link">mutate</a></span><span class="op">(</span>tier <span class="op">=</span> <span class="fu"><a href="https://rdrr.io/r/base/factor.html" class="external-link">as.factor</a></span><span class="op">(</span><span class="va">tier</span><span class="op">)</span><span class="op">)</span> <span class="op">|&gt;</span></span>
+<span>  <span class="fu"><a href="../reference/uss_make_seasons_cumulative.html">uss_make_seasons_final</a></span><span class="op">(</span><span class="op">)</span> <span class="op">|&gt;</span></span>
+<span>  <span class="fu">dplyr</span><span class="fu">::</span><span class="fu"><a href="https://dplyr.tidyverse.org/reference/arrange.html" class="external-link">arrange</a></span><span class="op">(</span><span class="va">team</span>, <span class="va">season</span><span class="op">)</span></span>
+<span></span>
+<span><span class="fu"><a href="../reference/uss_plot_seasons_tiers.html">uss_plot_seasons_tiers</a></span><span class="op">(</span><span class="va">leeds_norwich</span>, <span class="va">wins</span> <span class="op">-</span> <span class="va">losses</span><span class="op">)</span></span></code></pre></div>
+<p><img src="ussie_files/figure-html/plot-1.png" width="700"></p>
   </main>
 </div>
 
