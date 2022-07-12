@@ -61,3 +61,20 @@ italy_seasons <-
 
 ```
 
+
+We can look at the effect of tiers on (wins - losses) :
+
+``` {r plot}
+
+leeds_norwich <-
+  uss_get_matches("england") |>
+  uss_make_teams_matches() |>
+  dplyr::filter(team %in% c("Leeds United", "Norwich City")) |>
+  dplyr::mutate(tier = as.factor(tier)) |>
+  uss_make_seasons_final() |>
+  dplyr::arrange(team, season)
+
+uss_plot_seasons_tiers(leeds_norwich, wins - losses)
+
+
+```
