@@ -48,3 +48,16 @@ We can add filtering conditions
 uss_get_matches("italy", season == 1934) |> glimpse()
 
 ```
+
+We can get the final results for seasons :
+
+``` {r seasons}
+
+italy_seasons <-
+  get_matches_italy |>
+  uss_make_teams_matches() |>
+  uss_make_seasons_final() |>
+  glimpse()
+
+```
+
