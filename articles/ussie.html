@@ -130,6 +130,29 @@
 <span><span class="co">#&gt; $ visitor       <span style="color: #949494; font-style: italic;">&lt;chr&gt;</span> "US Livorno", "Unione Triestina", "Bologna FC", "US Ales…</span></span>
 <span><span class="co">#&gt; $ goals_home    <span style="color: #949494; font-style: italic;">&lt;int&gt;</span> 6, 3, 2, 0, 4, 0, 3, 1, 1, 1, 2, 4, 2, 2, 3, 2, 2, 2, 0,…</span></span>
 <span><span class="co">#&gt; $ goals_visitor <span style="color: #949494; font-style: italic;">&lt;int&gt;</span> 1, 1, 1, 1, 1, 2, 0, 2, 1, 1, 1, 0, 2, 1, 1, 0, 1, 1, 1,…</span></span></code></pre></div>
+<p>We can get the final results for seasons :</p>
+<div class="sourceCode" id="cb5"><pre class="downlit sourceCode r">
+<code class="sourceCode R"><span></span>
+<span><span class="va">italy_seasons</span> <span class="op">&lt;-</span></span>
+<span>  <span class="va">get_matches_italy</span> <span class="op">|&gt;</span></span>
+<span>  <span class="fu"><a href="../reference/uss_make_teams_matches.html">uss_make_teams_matches</a></span><span class="op">(</span><span class="op">)</span> <span class="op">|&gt;</span></span>
+<span>  <span class="fu"><a href="../reference/uss_make_seasons_cumulative.html">uss_make_seasons_final</a></span><span class="op">(</span><span class="op">)</span> <span class="op">|&gt;</span></span>
+<span>  <span class="fu"><a href="https://pillar.r-lib.org/reference/glimpse.html" class="external-link">glimpse</a></span><span class="op">(</span><span class="op">)</span></span>
+<span><span class="co">#&gt; Rows: 1,516</span></span>
+<span><span class="co">#&gt; Columns: 12</span></span>
+<span><span class="co">#&gt; Groups: country, tier, season [85]</span></span>
+<span><span class="co">#&gt; $ country       <span style="color: #949494; font-style: italic;">&lt;chr&gt;</span> "Italy", "Italy", "Italy", "Italy", "Italy", "Italy", "I…</span></span>
+<span><span class="co">#&gt; $ tier          <span style="color: #949494; font-style: italic;">&lt;int&gt;</span> 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1,…</span></span>
+<span><span class="co">#&gt; $ season        <span style="color: #949494; font-style: italic;">&lt;int&gt;</span> 1929, 1929, 1929, 1929, 1929, 1929, 1929, 1929, 1929, 19…</span></span>
+<span><span class="co">#&gt; $ team          <span style="color: #949494; font-style: italic;">&lt;chr&gt;</span> "AC Milan", "AS Roma", "Bologna FC", "Brescia Calcio", "…</span></span>
+<span><span class="co">#&gt; $ date          <span style="color: #949494; font-style: italic;">&lt;date&gt;</span> 1930-07-06, 1930-07-06, 1930-07-06, 1930-07-06, 1930-07…</span></span>
+<span><span class="co">#&gt; $ matches       <span style="color: #949494; font-style: italic;">&lt;int&gt;</span> 34, 34, 34, 34, 34, 34, 34, 34, 34, 34, 34, 34, 34, 34, …</span></span>
+<span><span class="co">#&gt; $ wins          <span style="color: #949494; font-style: italic;">&lt;int&gt;</span> 11, 15, 14, 13, 11, 20, 22, 19, 10, 11, 12, 12, 14, 16, …</span></span>
+<span><span class="co">#&gt; $ draws         <span style="color: #949494; font-style: italic;">&lt;int&gt;</span> 10, 6, 8, 7, 4, 8, 6, 7, 8, 8, 6, 9, 9, 7, 6, 8, 8, 5, 7…</span></span>
+<span><span class="co">#&gt; $ losses        <span style="color: #949494; font-style: italic;">&lt;int&gt;</span> 13, 13, 12, 14, 19, 6, 6, 8, 16, 15, 16, 13, 11, 11, 17,…</span></span>
+<span><span class="co">#&gt; $ points        <span style="color: #949494; font-style: italic;">&lt;int&gt;</span> 32, 36, 36, 33, 26, 48, 50, 45, 28, 30, 30, 33, 37, 39, …</span></span>
+<span><span class="co">#&gt; $ goals_for     <span style="color: #949494; font-style: italic;">&lt;int&gt;</span> 53, 73, 56, 45, 52, 63, 85, 56, 49, 48, 46, 52, 61, 52, …</span></span>
+<span><span class="co">#&gt; $ goals_against <span style="color: #949494; font-style: italic;">&lt;int&gt;</span> 48, 52, 46, 56, 78, 39, 38, 31, 50, 55, 64, 60, 51, 31, …</span></span></code></pre></div>
   </main>
 </div>
 
